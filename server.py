@@ -27,5 +27,13 @@ def create():
     return redirect('/users')
 
 
+@app.route('/user/edit/<int:id>')
+def edit(id):
+    data = {
+        "id": id
+    }
+    return render_template("edit_user.html", user=User.getone(data))
+
+
 if __name__ == "__main__":
     app.run(debug=True)

@@ -28,3 +28,9 @@ class User:
         # data is a dictionary that will be passed into the save method from server.py
         result = connectToMySQL('users_schema').query_db(query, data)
         return result
+
+    @classmethod
+    def get_one(cls, data):
+        query = "SELECT * FROM users WHERE id = %(id)s;"
+        result = connectToMySQL('users_schema').query_db(query, data)
+        return cls(result[0])
