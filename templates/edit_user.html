@@ -16,6 +16,7 @@
   <body>
     <form action="/user/update" method="post" class="col-6 mx-auto">
       <h2 class="text_center">Edit {{user.first_name}}</h2>
+      <input type="hidden" name="id" value="{{user.id}}" />
       <div class="form-group">
         <label for="first_name">First Name:</label>
         <input

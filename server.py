@@ -32,7 +32,7 @@ def edit(id):
     data = {
         "id": id
     }
-    return render_template("edit_user.html", user=User.getone(data))
+    return render_template("edit_user.html", user=User.get_one(data))
 
 
 if __name__ == "__main__":
